@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Rafelly Yasir R - System Administrator, Network Administrator, and Virtualization Specialist. Experienced in deploying and troubleshooting systems and networks for large-scale environments." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.rafelly.com/" />
+  <meta property="og:title" content="Rafelly Yasir R | System & Network Administrator" />
+  <meta property="og:description"
+    content="Professional portfolio of Rafelly Yasir R, specializing in virtualization, storage, and infrastructure management." />
+  <meta property="og:image" content="https://www.rafelly.com/picture.jpeg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.rafelly.com/" />
+  <meta property="twitter:title" content="Rafelly Yasir R | System & Network Administrator" />
+  <meta property="twitter:description"
+    content="Professional portfolio of Rafelly Yasir R, specializing in virtualization, storage, and infrastructure management." />
+  <meta property="twitter:image" content="https://www.rafelly.com/picture.jpeg" />
+
+  <title>Rafelly Yasir R | System Administrator</title>
+  <link rel="icon" type="image/x-icon" href="https://www.rafelly.com/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rafelly Yasir R",
+    "url": "https://www.rafelly.com/",
+    "jobTitle": "System Administrator",
+    "image": "https://www.rafelly.com/picture.jpeg",
+    "sameAs": [
+      "https://fb.me/rafelly.y",
+      "https://www.linkedin.com/in/rafelly-yasir-rahmat/",
+      "https://github.com/whoisrry"
+    ]
+  }
+  </script>
+  <style>
+:root {
+  --primary: #0077b6;
+  --primary-dark: #005f8c;
+  --secondary: #caf0f8;
+  --text-main: #1d3557;
+  --text-muted: #457b9d;
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+  --glass: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+[data-theme="dark"] {
+  --primary: #48cae4;
+  --primary-dark: #00b4d8;
+  --secondary: #023e8a;
+  --text-main: #f8f9fa;
+  --text-muted: #90e0ef;
+  --bg-light: #03045e;
+  --bg-white: #023e8a;
+  --glass: rgba(2, 62, 138, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* --- Mobile First Styles (Default) --- */
+
+.container {
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+.brand-title {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.brand-title a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.toggle-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  flex-shrink: 0;
+  order: 3;
+}
+
+.toggle-button .bar {
+  height: 2px;
+  width: 100%;
+  background-color: var(--text-main);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-links {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  height: auto;
+  width: 100%;
+  background: var(--bg-white);
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1100;
+  padding-bottom: 1rem;
+}
+
+.nav-links.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.theme-switch-wrapper {
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .theme-switch-wrapper { margin-right: 1rem; }
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-main);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle .moon-icon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+  display: block;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(circle at top right, var(--secondary), transparent),
+    radial-gradient(circle at bottom left, var(--bg-white), transparent);
+  padding: 4rem 1rem;
+  overflow-x: hidden;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 800px;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border: 6px solid var(--bg-white);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.hero-section h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-section h1 span {
+  color: var(--primary);
+  background: linear-gradient(120deg, var(--primary), #48cae4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-section p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  background: var(--bg-white);
+  padding: 0.5rem 0.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  color: var(--primary);
+}
+
+/* Sections General */
+.about-section,
+.expertise-section,
+.skills-section {
+  padding: 4rem 0;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background: var(--primary);
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.expertise-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.expertise-card {
+  background: var(--bg-white);
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.expertise-card .icon {
+  margin-bottom: 1.25rem;
+  background: var(--secondary);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.skill-item {
+  padding: 1.25rem;
+  background: var(--bg-white);
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+footer {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* --- Tablet Breakpoint (768px +) --- */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+    max-width: 720px;
+  }
+
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .brand-title a {
+    font-size: 1.4rem;
+  }
+
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .expertise-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Laptop/Desktop Breakpoint (1024px +) --- */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .toggle-button {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    width: auto;
+    background: transparent;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .nav-links ul {
+    flex-direction: row;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .expertise-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .expertise-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* --- Large Desktop (1200px +) --- */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Subnav Logic */
+.has-subnav {
+  position: relative;
+}
+
+.subnav {
+  display: none;
+  list-style: none;
+  z-index: 1200;
+}
+
+@media (min-width: 1024px) {
+  .has-subnav .subnav {
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 0;
+    width: 240px;
+    background: var(--bg-white);
+    padding: 0.75rem 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--glass-border);
+    display: none;
+  }
+
+  .has-subnav.active .subnav {
+    display: block;
+    animation: fadeInSlide 0.3s ease-out forwards;
+  }
+
+  @keyframes fadeInSlide {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .subnav li {
+    width: 100%;
+  }
+
+  .subnav li a {
+    padding: 0.75rem 1.5rem;
+    display: block;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+  }
+
+  .subnav li a:hover {
+    background: var(--secondary);
+    color: var(--primary);
+    padding-left: 2rem;
+  }
+
+  .subnav li a::after {
+    display: none;
+  }
+}
+
+/* Mobile Subnav */
+@media (max-width: 1023px) {
+  .subnav {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 12px;
+    margin-top: 0.5rem;
+    display: none;
+  }
+
+  .has-subnav.active .subnav {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .subnav li a {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: var(--text-main);
+  }
+}
+.expertise-card .icon { color: var(--primary); }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="brand-title">
+        <a href="mailto:me@rafelly.com">Rafelly Yasir R</a>
+      </div>
+      <div class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <div class="theme-switch-wrapper">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="http://mr.heru.id" target="_blank">Repository</a></li>
+          <li class="has-subnav">
+            <a href="#" class="mytools-link">MyTools</a>
+            <ul class="subnav">
+              <li><a href="http://dl.rafelly.com/" target="_blank">Downloads</a></li>
+              <li><a href="https://www.rafelly.com/ssl" target="_blank" rel="noopener">Self-Signed Cert Generator</a></li>
+              <li><a href="https://www.rafelly.com/ipcheck" target="_blank" rel="noopener">IPCheck</a></li>
+              <li><a href="https://www.rafelly.com/netplan" target="_blank" rel="noopener">Netplan Generator</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <img src="https://www.rafelly.com/picture.jpeg" alt="Profile" class="profile-pic" />
+      <h1>Hello, I'm <span>Rafelly Yasir R</span></h1>
+      <p>
+        <strong>System Administrator | Network Administrator | Virtualization Specialist</strong>
+      </p>
+      <div class="social-links">
+        <a href="https://fb.me/rafelly.y" target="_blank" rel="noopener" aria-label="Facebook Profile">Facebook</a>
+        <a href="https://www.linkedin.com/in/rafelly-yasir-rahmat/" target="_blank"
+          aria-label="LinkedIn Profile">LinkedIn</a>
+        <a href="https://github.com/whoisrry" target="_blank" rel="noopener" aria-label="GitHub Profile">GitHub</a>
+        <a href="https://wa.me/6281275692206" target="_blank" rel="noopener" aria-label="WhatsApp Contact">WhatsApp</a>
+        <a href="https://telegram.me/rafelly" target="_blank" rel="noopener" aria-label="Telegram Contact">Telegram</a>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Self-motivated fast learner. Loves System Development and Network Engineering.
+        Experienced in both deploying and troubleshooting systems and networks for
+        large-scale or remote environments. Mainly focus on secure result. Multi-brand device user.
+      </p>
+    </div>
+  </section>
+  <section id="expertise" class="expertise-section">
+    <div class="container">
+      <h2>Area of Expertise</h2>
+      <div class="expertise-cards">
+        <div class="expertise-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 512 512">
+              <path
+                d="M480 128c0-17.7-14.3-32-32-32H64c-17.7 0-32 14.3-32 32v256c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V128zM88 208h104v32H88v-32zm160 0h176v32H248v-32zM88 272h216v32H88v-32zm280 0h56v32h-56v-32z" />
+            </svg>
+          </div>
+          <h3>System Administration</h3>
+          <p>
+            Experienced in configuring and managing BSD/Linux/Windows servers, automation, and monitoring tools.
+          </p>
+        </div>
+        <div class="expertise-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 640 512">
+              <path
+                d="M384 96c0 53-43 96-96 96s-96-43-96-96S235 0 288 0s96 43 96 96zm221.9 276.9L544 192H384l-.3 64H256.3l-.3-64H96L34.1 372.9c-4.5 11.3-.4 24.2 10 30.6l80 48c11.2 6.7 25.6 3 33.1-8.1L192.9 384h254.2l35.8 59.3c7.5 11.1 21.9 14.8 33.1 8.1l80-48c10.4-6.3 14.5-19.3 10-30.5z" />
+            </svg>
+          </div>
+          <h3>Network Administration</h3>
+          <p>
+            Skilled at designing, implementing, and troubleshooting complex network infrastructures.
+          </p>
+        </div>
+        <div class="expertise-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 640 512">
+              <path
+                d="M304 96c0-17.7 14.3-32 32-32h272c17.7 0 32 14.3 32 32v224c0 17.7-14.3 32-32 32H336c-17.7 0-32-14.3-32-32V96zm288 16H352v192h240V112zm-480 16c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16v112H16c-8.8 0-16 7.2-16 16v128c0 17.7 14.3 32 32 32H272c17.7 0 32-14.3 32-32V240c0-8.8-7.2-16-16-16H144V128z" />
+            </svg>
+          </div>
+          <h3>Virtualization</h3>
+          <p>
+            Expertise in hypervisors, containerization, and cloud-based virtual environments for scalability and
+            efficiency.
+          </p>
+        </div>
+        <div class="expertise-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 448 512">
+              <path
+                d="M448 96v320c0 53-86.5 96-192 96S32 469 32 416V96C32 43 118.5 0 224 0s192 43 192 96zM224 432c88.2 0 160-25.9 160-64s-71.8-64-160-64-160 25.9-160 64 71.8 64 160 64zm0-176c88.2 0 160-25.9 160-64s-71.8-64-160-64-160 25.9-160 64 71.8 64 160 64z" />
+            </svg>
+          </div>
+          <h3>Storage</h3>
+          <p>
+            Proficient in managing storage solutions including SAN, NAS, RAID, ZFS, LVM, and Ceph.
+          </p>
+        </div>
+        <div class="expertise-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 512 512">
+              <path
+                d="M480 160H32c-17.67 0-32 14.33-32 32v256c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32V192c0-17.67-14.33-32-32-32zM64 240h128v32H64v-32zm0 64h128v32H64v-32zm0 64h128v32H64v-32zm384 32h-64v-32h64v32zm0-64h-64v-32h64v32zm0-64h-64v-32h64v32zM256 0c-17.67 0-32 14.33-32 32v96h64V32c0-17.67-14.33-32-32-32z" />
+            </svg>
+          </div>
+          <h3>Enterprise Infrastructure</h3>
+          <p>
+            Architecting and maintaining robust, scalable enterprise-level IT environments and server clusters.
+          </p>
+        </div>
+        <div class="expertise-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 512 512">
+              <path
+                d="M0 96c0-17.7 14.3-32 32-32h448c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V96zm0 160c0-17.7 14.3-32 32-32h448c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32v-32zm0 160c0-17.7 14.3-32 32-32h448c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32v-32z" />
+            </svg>
+          </div>
+          <h3>Datacenter Operation</h3>
+          <p>
+            Experience in managing physical and virtual datacenter resources, hardware lifecycle, and environmentals.
+          </p>
+        </div>
+        <div class="expertise-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 448 512">
+              <path
+                d="M400 224h-24v-72c0-83.8-68.2-152-152-152S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-48.5 39.5-88 88-88s88 39.5 88 88v72z" />
+            </svg>
+          </div>
+          <h3>System Security</h3>
+          <p>
+            Implementing advanced security protocols, hardening systems, and managing firewalls for multi-layered
+            protection.
+          </p>
+        </div>
+        <div class="expertise-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 512 512">
+              <path
+                d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z" />
+            </svg>
+          </div>
+          <h3>Email Administrator</h3>
+          <p>
+            Configuring and optimizing enterprise mail solutions, SPF/DKIM/DMARC implementation, and anti-spam systems.
+          </p>
+        </div>
+        <div class="expertise-card">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 448 512">
+              <path
+                d="M433.941 129.941l-83.882-83.882A48 48 0 0 0 316.118 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V163.882a48 48 0 0 0-14.059-33.941zM224 416c-35.346 0-64-28.654-64-64 0-35.346 28.654-64 64-64s64 28.654 64 64c0 35.346-28.654 64-64 64zm96-304.52V212c0 6.627-5.373 12-12 12H76c-6.627 0-12-5.373-12-12V108c0-6.627 5.373-12 12-12h228.52c3.183 0 6.235 1.264 8.485 3.515l3.48 3.48A11.996 11.996 0 0 1 320 111.48z" />
+            </svg>
+          </div>
+          <h3>Backup and Restore</h3>
+          <p>
+            Designing failsafe backup strategies, disaster recovery planning, and ensuring data integrity across hybrid
+            environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-list">
+        <div class="skill-item">
+          <h3>Virtualization</h3>
+          <p>
+            Experience in virtualization platforms like VMware, Hyper-V, KVM, and container ecosystems.
+          </p>
+        </div>
+        <div class="skill-item">
+          <h3>Infrastructure</h3>
+          <p>
+            Capable of architecting, deploying, and maintaining reliable on-premise or cloud-based infrastructures.
+          </p>
+        </div>
+        <div class="skill-item">
+          <h3>Networking</h3>
+          <p>
+            Strong foundation in switching, routing, firewall configurations, and network performance optimization.
+          </p>
+        </div>
+        <div class="skill-item">
+          <h3>Scripting</h3>
+          <p>
+            Familiar with scripting and automation using git, bash, and ansible.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>© 2026 Rafelly Yasir R. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.querySelector(".toggle-button");
+  const navLinks = document.querySelector(".nav-links");
+  const subnavLinks = document.querySelector(".mytools-link");
+  const parentLi = subnavLinks ? subnavLinks.closest('.has-subnav') : null;
+
+  // Mobile Menu Toggle
+  if (toggleButton && navLinks) {
+    toggleButton.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent immediate closure from document click listener
+      navLinks.classList.toggle("active");
+    });
+
+    // Close menu on scroll or click outside
+    document.addEventListener("scroll", () => {
+      if (navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
+      }
+    });
+  }
+
+  // Dropdown Toggle (Desktop & Mobile)
+  if (subnavLinks) {
+    subnavLinks.addEventListener('click', function (e) {
+      e.preventDefault();
+      parentLi.classList.toggle('active');
+    });
+  }
+
+  // Close menu or dropdown if clicking outside
+  document.addEventListener('click', (e) => {
+    // Close mobile menu
+    if (navLinks && navLinks.classList.contains("active") && !navLinks.contains(e.target) && !toggleButton.contains(e.target)) {
+      navLinks.classList.remove("active");
+    }
+    // Close dropdown
+    if (parentLi && parentLi.classList.contains('active') && !parentLi.contains(e.target)) {
+      parentLi.classList.remove('active');
+    }
+  });
+
+  // Theme Toggle Logic
+  const themeToggle = document.getElementById('theme-toggle');
+  let currentTheme = null;
+  try { currentTheme = localStorage.getItem('theme'); } catch (e) {}
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      let theme = document.documentElement.getAttribute('data-theme');
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        try { localStorage.setItem('theme', 'light'); } catch (e) {}
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+      }
+    });
+  }
+});
+
+  </script>
+</body>
+
+</html>
